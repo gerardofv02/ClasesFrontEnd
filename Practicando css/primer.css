@@ -1,0 +1,174 @@
+#titulo{
+    color: tomato;
+}
+
+
+p.texto{
+    color:slateblue;
+}
+
+p.especial{
+    color:brown;
+}
+
+div p {
+    font-size: 32px;
+    color:green;
+}
+/*comentario*/
+div h2, div h3{
+    color: aqua;
+}
+
+*{
+    font-size : 24px;
+}
+/*
+.color{
+    color: #ff0000;
+}
+.color{
+    color:rgb(0,0,0);
+}
+*/
+.color{
+   /* border: 5px red outset;*/
+    /*
+
+    dotted
+    dashed
+    solid
+    double
+    groove
+    ridge
+    inset
+    outset
+    none 
+    hidden
+    */
+    border-style: solid;
+    border-color: aqua;
+    border-radius: 5px;
+    border-width: 5pt;
+}
+
+#fondo{
+    background-color: rgba(255,0,0);
+    height: 200px;
+    background-image: url('mifoto.jpg');
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+}
+
+.margen{
+    background-color: chocolate;
+    margin:15px;
+    padding: 30px 15px 5px;
+    border: solid 1px black;
+    height: 100px;
+    width: 50px;
+    overflow: scroll;
+    outline: 1px solid red;
+}
+
+.text{
+    font-family: 'Sassy Frass', sans-serif;
+    text-align: justify;
+    text-decoration: line-through;
+    text-shadow: 3px 5px 5px blue;
+}
+
+a:link{
+    color:blueviolet;
+}
+a:visited{
+    color:gray;
+}
+
+a:hover{
+    color:yellow;
+
+}
+a:active{
+    color:red;
+}
+
+ul{
+    background-color: cyan;
+}
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+}
+th,td{
+    border: solid 1px black;
+    padding: 5px;
+}
+th{
+    background-color: tomato;
+    color: white;
+    text-align: left;
+}
+tr:nth-child(even){
+    background-color: #eee;
+
+}
+
+tr:hover{
+    background-color: aqua;
+    cursor: pointer;
+}
+
+span{
+    display: block;
+    max-width: 300px;
+    background-color: beige;
+}
+
+.inline{
+    display:inline;
+}
+
+#position{
+    position: relative;
+    left:20px;
+    /*top: 25px;*/
+
+}
+
+.left{
+    float:left;
+    width: 200px;
+    height: 200px;
+}
+
+.container{
+    height: 200px;
+}
+
+.right{
+    float: right;
+}
+
+.column{
+
+    margin:0 ;
+    padding: 10px 0;
+    width: 33.3%;
+}
+
+.inline-block{
+    display:inline-block;
+    height: 55px;
+    background-color: red;
+
+}
+
+.center{
+    width: 200px;
+    margin:0 auto;
+    background-color: aqua;
+    text-align: center;
+    padding:50px 0;
+}

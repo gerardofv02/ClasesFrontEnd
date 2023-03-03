@@ -1,0 +1,2 @@
+csr-> se pinta en el cliente
+ssr-> se pinta en el server
