@@ -1,14 +1,45 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
+import Formulario from "@/components/formulario";
+import Link from "next/link";
+type ServerSideProps = {
+  name: string, 
+  id: string,
 
-const inter = Inter({ subsets: ['latin'] })
+}   
+ export async function getServerSideProps(){
+    let planets : ServerSideProps[] = [];
+    for(let i = 1; i <= 6 ; i++){
+    const data = await fetch(`https://swapi.dev/api/planets/?page=${i}`);
+    const json =  await data.json();
+    json.results.forEach((planet:any) => {
+    let idArr = planet.url.split("/");
+    planets.push({name:planet.name, id:idArr[5]})
+})
+  }
+  return {
+      props: {planets},
+  }
+  
+}
+type PageProps = {
+  planets: {name: string,
+  
+  id: string}[],
+}
 
-export default function Home() {
-  return (
-    <>
-      Hola
-    </>
-  )
+export default function Home(props: PageProps) {
+  if(props.planets.length === 0){
+    return(
+      <>Loading Data</>
+    )
+  }else{
+    return (
+      <> 
+         <div>{props.planets.map(planet => 
+            <Link href={`/planets/${planet.id}`}>{planet.name}</Link>
+            )}</div>
+      </>
+  
+    )
+  }
+
 }

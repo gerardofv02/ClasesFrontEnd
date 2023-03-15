@@ -32,7 +32,7 @@ const Formulario = () => {
            Introduce Pagina : <input type="number" value={page} onChange={(e) => setPage(parseInt(e.target.value))}/> <br/>
            <button onClick={() => setPage(page+1)}>Siguiente página</button>
            <button onClick={() => setPage(page-1)}>Pagina anterior </button>
-            {data.map((item,index) => (<Link href="/character/1">{item}</Link>))}
+            {data.map((item,index) => (<Link href={`character/${index+1}`}>{item}</Link>))}
         </>
     )
 }
