@@ -1,4 +1,4 @@
-import Formulario from "@/components/formulario";
+
 import Link from "next/link";
 type ServerSideProps = {
   name: string, 
