@@ -22,8 +22,7 @@ type ServerSideProps = {
 }
 type PageProps = {
   planets: {name: string,
-  
-  id: string}[],
+            id: string}[],
 }
 
 export default function Home(props: PageProps) {
