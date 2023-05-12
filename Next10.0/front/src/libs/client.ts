@@ -7,14 +7,14 @@ import{InMemoryCache, ApolloClient, NormalizedCacheObject} from "@apollo/client"
 
 
 const CSRClient = new ApolloClient({
-    uri: "https://localhost:8080",
+    uri: "http://localhost:8080/graphql",
     cache: new InMemoryCache(),
 });
 
 const getClient = () => {
     if(typeof window === "undefined"){
         return new ApolloClient({
-            uri: "https://back:8080",
+            uri: "http://back:8080/graphql",
             cache: new InMemoryCache(),
         })
     }else{

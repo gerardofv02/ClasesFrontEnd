@@ -1,39 +1,37 @@
-import { GetServerSideProps } from "next";
-import  getClient  from "@/libs/client";
+import { GetServerSideProps } from 'next';
+import  getClient  from '../libs/client';
+import { gql } from '@apollo/client';
+import Link from 'next/link'
+import Agenda from '@/components/mutation';
 
 
-import {gql }from "@apollo/client";
-export const getServerSideProps:GetServerSideProps = async () => {
-
-
+export  const getServerSideProps : GetServerSideProps = async ()=> {
   const query = gql`
-  query ExampleQuery {
+  query ExampleQuery{
     list
   }
-  
-  `
+  `;
 
   const client = getClient();
-  const {data} = await client.query<{
-    list: string[],
-  }>({
+  const {data} = await client.query({
     query
   });
+
+  console.log("Informacion data", {data})
+
   return {
-    props:{
-      data: data
+    props: {
+      data: data.list
     }
   }
-
 }
 
-export default function Home(props: {data: {list:string[]}}){
-    console.log(props.data);
-  return(
+export default function Home(props: {data:string[]}) {
+
+
+  return (
     <>
-      {props.data.list.map((word) => {
-        return word;
-      })}
+      <Agenda data={props.data}/>
     </>
   )
 }

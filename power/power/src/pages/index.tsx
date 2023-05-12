@@ -81,7 +81,7 @@ export default function Home(props: {
     <>
         {props.data.map( (character) => {
 return(
-  <div>
+  <div key={character.id}>
         {character.name}
         
         </div>
